@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "Bill": {
+      "title": "Bill",
+      "description": "Bakery customer invoice and order details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "billNo": { "type": "string" },
+        "sequence": { "type": "number" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "customerName": { "type": "string" },
+        "customerMobile": { "type": "string" },
+        "orderType": { "type": "string" },
+        "deliveryDate": { "type": "string" },
+        "deliveryTime": { "type": "string" },
+        "cakeMessage": { "type": "string" },
+        "items": { "type": "string" },
+        "subtotal": { "type": "number" },
+        "discountType": { "type": "string" },
+        "discountValue": { "type": "number" },
+        "discountAmount": { "type": "number" },
+        "taxPercent": { "type": "number" },
+        "taxAmount": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "advancePaid": { "type": "number" },
+        "dueAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "billNo", "grandTotal", "createdAt"]
+    },
+    "BakeryProduct": {
+      "title": "BakeryProduct",
+      "description": "Bakery catalog item or cake",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "nameBn": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "category": { "type": "string" },
+        "defaultRate": { "type": "number" },
+        "unit": { "type": "string" },
+        "popular": { "type": "boolean" },
+        "image": { "type": "string" }
+      },
+      "required": ["id", "nameEn", "defaultRate"]
+    },
+    "ShopConfig": {
+      "title": "ShopConfig",
+      "description": "Store configuration and contact details",
+      "type": "object",
+      "properties": {
+        "shopName": { "type": "string" },
+        "phone": { "type": "string" },
+        "addressLine1": { "type": "string" },
+        "upiId": { "type": "string" }
+      },
+      "required": ["shopName", "phone"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Registered customer CRM profile, loyalty points, and purchase history",
+      "type": "object",
+      "properties": {
+        "customerMobile": { "type": "string" },
+        "customerName": { "type": "string" },
+        "totalOrders": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "pointsBalance": { "type": "number" },
+        "lastVisitDate": { "type": "string" },
+        "tierId": { "type": "string" },
+        "tierName": { "type": "string" },
+        "notes": { "type": "string" },
+        "registeredAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["customerMobile", "customerName"]
+    }
+  },
+  "firestore": {
+    "/bills/{billId}": {
+      "schema": { "$ref": "#/entities/Bill" },
+      "description": "Collection of bakery bills and advance orders"
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/BakeryProduct" },
+      "description": "Collection of bakery menu products"
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/ShopConfig" },
+      "description": "Shop settings and metadata"
+    },
+    "/customers/{customerMobile}": {
+      "schema": { "$ref": "#/entities/Customer" },
+      "description": "Collection of registered bakery customers and cross-terminal loyalty data"
+    }
+  }
+}

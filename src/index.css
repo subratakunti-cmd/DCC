@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+/* Custom Scrollbar for sleek POS interface */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Pre-decode print DOM & images off-screen instead of display:none so logos always print cleanly */
+@media screen {
+  #print-only-container {
+    position: fixed;
+    left: -12000px;
+    top: 0;
+    width: 210mm;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    margin: 8mm;
+    size: auto;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  nav,
+  header,
+  footer,
+  aside,
+  button,
+  .modal-backdrop {
+    display: none !important;
+  }
+
+  .print-only,
+  #print-only-container {
+    display: block !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    visibility: visible !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  #print-only-container img {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Thermal printer specific optimizations */
+  .thermal-receipt, .kot-ticket {
+    width: 76mm !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1.5mm !important;
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .thermal-receipt-58 {
+    width: 48mm !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 1mm !important;
+    font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    color: #000 !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Full A4 Tax Invoice format */
+  .standard-invoice {
+    width: 100% !important;
+    max-width: 190mm !important;
+    margin: 0 auto !important;
+    padding: 2mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  /* Compact A5 Invoice format */
+  .standard-invoice-a5 {
+    width: 100% !important;
+    max-width: 134mm !important;
+    margin: 0 auto !important;
+    padding: 2mm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+

@@ -1,0 +1,51 @@
+{
+  "packageId": "com.deliciouscakecorner.pos",
+  "host": "ais-pre-7horp6gssg2hdcmryj25ch-268324610539.asia-east1.run.app",
+  "name": "DELICIOUS CAKE CORNER — Bakery POS & Billing",
+  "launcherName": "DCC Billing",
+  "display": "standalone",
+  "themeColor": "#4B1D3F",
+  "themeColorDark": "#2A0E23",
+  "navigationColor": "#4B1D3F",
+  "navigationColorDark": "#2A0E23",
+  "backgroundColor": "#F8F6F4",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://ais-pre-7horp6gssg2hdcmryj25ch-268324610539.asia-east1.run.app/pwa-512x512.png",
+  "maskableIconUrl": "https://ais-pre-7horp6gssg2hdcmryj25ch-268324610539.asia-east1.run.app/pwa-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "dcc-pos-key"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "New Bill (নতুন বিল)",
+      "short_name": "New Bill",
+      "url": "/?action=billing",
+      "icon": "https://ais-pre-7horp6gssg2hdcmryj25ch-268324610539.asia-east1.run.app/pwa-192x192.png"
+    },
+    {
+      "name": "Advance Orders (অর্ডার লিস্ট)",
+      "short_name": "Orders",
+      "url": "/?action=history",
+      "icon": "https://ais-pre-7horp6gssg2hdcmryj25ch-268324610539.asia-east1.run.app/pwa-192x192.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://ais-pre-7horp6gssg2hdcmryj25ch-268324610539.asia-east1.run.app/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": true
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  }
+}

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4b1d3f"/>
+      <stop offset="100%" stop-color="#2a0f23"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Background with rounded corners -->
+  <rect width="512" height="512" rx="108" fill="url(#bgGrad)"/>
+  
+  <!-- Outer golden ring for elegance -->
+  <circle cx="256" cy="256" r="216" fill="none" stroke="url(#goldGrad)" stroke-width="8" opacity="0.4"/>
+  
+  <!-- Bakery Cake Art -->
+  <!-- Cake Base Plate -->
+  <ellipse cx="256" cy="380" rx="160" ry="24" fill="#ffffff" opacity="0.9"/>
+  <ellipse cx="256" cy="376" rx="150" ry="20" fill="#fef3c7"/>
+
+  <!-- Cake Bottom Layer -->
+  <rect x="136" y="270" width="240" height="96" rx="16" fill="#fde68a"/>
+  <!-- Chocolate/Cream Glaze Dripping -->
+  <path d="M 136 295 Q 166 335 196 295 Q 226 345 256 295 Q 286 340 316 295 Q 346 330 376 295 L 376 270 L 136 270 Z" fill="#d97706"/>
+  
+  <!-- Cake Top Layer -->
+  <rect x="176" y="190" width="160" height="80" rx="14" fill="#fef08a"/>
+  <!-- Glaze Top -->
+  <path d="M 176 215 Q 200 245 224 215 Q 256 250 288 215 Q 312 240 336 215 L 336 190 L 176 190 Z" fill="#b45309"/>
+
+  <!-- Cherries / Topping -->
+  <circle cx="256" cy="180" r="16" fill="#ef4444"/>
+  <circle cx="216" cy="184" r="14" fill="#f59e0b"/>
+  <circle cx="296" cy="184" r="14" fill="#f59e0b"/>
+  <path d="M 256 166 Q 270 140 286 146" fill="none" stroke="#15803d" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Candle Flame -->
+  <ellipse cx="256" cy="116" rx="8" ry="14" fill="#fbbf24"/>
+  <ellipse cx="256" cy="118" rx="4" ry="8" fill="#ef4444"/>
+  <rect x="254" y="130" width="4" height="24" rx="2" fill="#ffffff"/>
+
+  <!-- Pure Veg Green Dot Badge in top right corner -->
+  <g transform="translate(370, 70)">
+    <rect width="64" height="64" rx="14" fill="#ffffff" stroke="#16a34a" stroke-width="5"/>
+    <circle cx="32" cy="32" r="16" fill="#16a34a"/>
+  </g>
+
+  <!-- Shop Initials "DCC" at bottom -->
+  <text x="256" y="445" font-family="Arial, sans-serif" font-weight="900" font-size="34" fill="#fbbf24" text-anchor="middle" letter-spacing="4">DELICIOUS CAKE</text>
+  <text x="256" y="475" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.8" letter-spacing="2">100% EGGLESS BAKERY</text>
+</svg>

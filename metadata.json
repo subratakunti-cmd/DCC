@@ -1,0 +1,6 @@
+{
+  "name": "DELICIOUS CAKE CORNER — Billing & POS",
+  "description": "Smart Billing, Point-of-Sale and Order Management for Delicious Cake Corner bakery (100% Eggless), Mansuka, Ghatal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
